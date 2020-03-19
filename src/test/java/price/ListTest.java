@@ -10,16 +10,15 @@ public class ListTest{
 
     @Test
     public void testAddProduct() {
-        List list = new List();
-        list.addProduct(2, new List.Product("milk", 7, 0));
-        list.addProduct(1, new List.Product("mars", 1, 50));
-        List priceList1 = new List(new HashMap<Integer, List.Product>() {{
-            put(2, new List.Product("milk", 700));
-            put(1, new List.Product("mars", 150));
-        }});
-        assertEquals(list, priceList1);
-        list.addProduct(3, new List.Product("fewf",200, 66));
-        assertNotEquals(list, priceList1);
+        List priceList1 = new List();
+        priceList1.addProduct(2, new List.Product("milk", 7, 0));
+        priceList1.addProduct(1, new List.Product("mars", 1, 50));
+
+        List priceList2 = new List();
+        priceList2.addProduct(2, new List.Product("milk", 7, 0));
+        priceList2.addProduct(1, new List.Product("mars", 1, 50));
+        priceList1.addProduct(3, new List.Product("bread" , 5, 0  ));
+        assertNotEquals(priceList1, priceList2);
     }
 
     @Test

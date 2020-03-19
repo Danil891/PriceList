@@ -17,7 +17,7 @@ public class List {
         private final int roub;
         private final int kope;
 
-        public Product(String name, int roub, int kope) {
+        Product(String name, int roub, int kope) {
             this.name = name;
             this.roub = roub;
             this.kope = kope;
@@ -54,14 +54,10 @@ public class List {
         }
     }
 
-    private static Map<Integer, Product> listP;
+    private  Map<Integer, Product> listP;
 
-    public List(Map<Integer, Product> listP){
-        this.listP = listP;
-    }
-
-    public List() {
-        this.listP = new HashMap<Integer, Product>();
+    List() {
+        listP = new HashMap<Integer, Product>();
     }
 
     public void addProduct(Integer code, Product product) {
